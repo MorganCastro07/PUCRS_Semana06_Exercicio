@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class CopyOfTeste_01
+{
+    public static void main (String[]args){
+        
+        Scanner dados = new Scanner(System.in);
+        
+        int hora, minutos, segundos, sec_rest, sec_atual;
+        
+        System.out.println("INFORME A HORA (EX: 00 até 23)");
+        hora = dados.nextInt();
+        
+        System.out.println("INFORME OS MINUTOS (EX: 00 até 60)");
+        minutos = dados.nextInt();        
+        
+        System.out.println("INFORME OS SEGUNDOS (EX: 00 até 60)");
+        segundos = dados.nextInt();
+                
+        if (hora >=0 && hora <=23 && minutos >=0 && minutos <=60 && segundos >=0 && segundos <=60){
+            sec_atual = hora*3600+minutos*60+segundos;
+            sec_rest = 86400 - (sec_atual);
+            
+            System.out.println();
+            System.out.println("INFORME OS SEGUNDOS ATUAIS: " + sec_atual);
+            System.out.println();
+            System.out.println("INFORME OS SEGUNDOS RESTANTE PARA TERMINA O DIA: " + sec_rest);
+        }else{
+            System.out.println("OS DADOS INSERIDOS ESTÃO INCORRETOS");
+        }
+    }
+}
