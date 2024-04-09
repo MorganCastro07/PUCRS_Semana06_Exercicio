@@ -7,6 +7,7 @@ Exercício inicial com o comando switch case
 ● adulto = maiores de 18 anos 
 
 -------------------------------------------------------------------------------------
+ESTE MODELO ABAIXO FICA UM MENU ONDE VOÇÊ ESCOLHE AS OPÇÕES POR CATEGORIAS.
 
 import java.util.Scanner;
 public class Nadador
@@ -70,3 +71,61 @@ public class Nadador
         }
     }
 }
+
+---------------------------------------------------------------------------------------------------
+ESTE MODELO ABAIXO FICA UM MENU ONDE VOÇÊ DIGITE APENAS A IDADE E JÁ MOSTRA A CATEGORIA DO NADADOR.
+
+import java.util.Scanner;
+public class Nadador_Switch
+{
+    public static void main(String[]args){
+      
+        Scanner dados = new Scanner (System.in);
+        
+        int idade;
+        String nome;
+
+        System.out.println("INFORME O NOME DO(A) NADADOR(A): ");
+        nome = dados.nextLine();
+        
+        System.out.println("INFORME A IDADE:");
+        System.out.println();
+        System.out.println("CATEGORIAS POR IDADE");
+        System.out.println("INFANTIL A = 5 ATÉ 7 ANOS");
+        System.out.println("INFANTIL B = 8 ATÉ 10 ANOS");
+        System.out.println("JUVENIL A = 11 ATÉ 13 ANOS");
+        System.out.println("JUVENIL B = 14 ATÉ 17 ANOS");
+        System.out.println("ADULTO = 18+ ANOS");
+        idade = dados.nextInt();
+                    
+            switch (idade){
+                case 0,1,2,3,4:
+                    System.out.println("IDADE INVALIDO PARA A CATEGORIA");
+                    break;
+                case 5,6,7:
+                    System.out.println("ALUNO(A) CLASSIFICADO(A) PARA INFANTIL A");
+                    break;
+                case 8,9,10:
+                    System.out.println("ALUNO(A) CLASSIFICADO(A) PARA INFANTIL B");
+                    break;
+                case 11,12,13:
+                    System.out.println("ALUNO(A) CLASSIFICADO(A) PARA JUVENIL A");
+                    break;
+                case 14,15,16,17:
+                    System.out.println("ALUNO(A) CLASSIFICADO(A) PARA JUVENIL B");
+                    break;
+                case 18:
+                    System.out.println("ALUNO(A) CLASSIFICADO(A) PARA ADULTO");
+                    break;
+                default:
+                    if (idade <0){
+                        System.out.println("IDADE INVALIDO PARA A CATEGORIA");
+                    }else if (idade >18 && idade <121){
+                        System.out.println("ALUNO(A) CLASSIFICADO(A) PARA ADULTO");
+                    }else{
+                        System.out.println("IDADE INVALIDO PARA A CATEGORIA");
+                    }
+                    break; 
+            }
+        }
+    }
